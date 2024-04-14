@@ -357,7 +357,7 @@ class ImageEditor:
 
     def edit_image(self):
         self.opt = self.get_arguments()
-        config = OmegaConf.load("configs/latent-diffusion/txt2img-1p4B-eval.yaml")
+        config = OmegaConf.load("/home/it21902/latent-diffusion/logs/2024-03-20T15-41-49_sixray/configs/2024-04-10T01-46-56-project.yaml")
 
         self.device = (
             torch.device(f"cuda:{self.opt.gpu_id}")
@@ -365,7 +365,7 @@ class ImageEditor:
             else torch.device("cpu")
         )
         self.model = load_model_from_config(
-            config=config, ckpt="models/ldm/text2img-large/model.ckpt", device=self.device
+            config=config, ckpt="/home/it21902/latent-diffusion/logs/2024-03-20T15-41-49_sixray/checkpoints/last.ckpt", device=self.device
         )
         self.sampler = DDIMSampler(self.model)
 
