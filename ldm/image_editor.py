@@ -39,7 +39,7 @@ def load_model_from_config(config, ckpt, device, verbose=False) -> LatentDiffusi
 
     model.to(device)
     model.cond_stage_model.device = device
-    model.cond_stage_model.tknz_fn.device = device
+    # model.cond_stage_model.tknz_fn.device = device
     model.eval()
     return model
 
