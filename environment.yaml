@@ -1,4 +1,4 @@
-name: ldm
+name: blended-ldm
 channels:
   - pytorch
   - huggingface
